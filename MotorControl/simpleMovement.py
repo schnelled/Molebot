@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 FORWARD_RIGHT = 26
 BACKWARD_RIGHT = 20
 FORWARD_LEFT = 19
-FORWARD_LEFT = 16
+BACKWARD_LEFT = 16
 
 # Cleanup the GPIO before starting
 GPIO.cleanup()
