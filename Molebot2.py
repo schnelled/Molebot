@@ -154,7 +154,7 @@ while (True):
 		time.sleep(0.01)
 
 	print "Backward! "
-	backward(leftMotor, rightMotor)
+	reverse(leftMotor, rightMotor)
 
 	print "\tSpeed up..."
 	for i in range(255):
