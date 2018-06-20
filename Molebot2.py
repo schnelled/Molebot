@@ -3,11 +3,14 @@ from Raspi_MotorHAT import Raspi_MotorHAT, Raspi_DCMotor
 import time
 import atexit
 
+# Create a default stepper motor HAT object
+mh = Raspi_MotorHAT(addr=0x6f)
+
 # Function:     turnOffMotors
 # Input:        none
 # Output:       void
 # Description:  Auto-disables motors on shutdown
-def turnOffMotors(mh):
+def turnOffMotors():
     mh.getMotor(1).run(Raspi_MotorHAT.RELEASE)
 	mh.getMotor(2).run(Raspi_MotorHAT.RELEASE)
 	mh.getMotor(3).run(Raspi_MotorHAT.RELEASE)
