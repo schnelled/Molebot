@@ -1,3 +1,7 @@
+# Import needed libraries
+import time
+import RPi.GPIO as GPIO
+
 # Define the constant variables for motor movement
 FORWARD_RIGHT = 26
 BACKWARD_RIGHT = 20
