@@ -49,7 +49,7 @@ def reverse(leftMotor, rightMotor):
 # Output:       void
 # Description:  Move the left wheel forward
 ####################################################
-def turnLeft(leftMotor):
+def turnRight(leftMotor):
 	# Move the left wheel forward
 	leftMotor.run(Raspi_MotorHAT.FORWARD)
 
@@ -62,7 +62,7 @@ def turnLeft(leftMotor):
 # Output:       void
 # Description:  Move the right wheel forward
 ####################################################
-def turnRight(rightMotor):
+def turnLeft(rightMotor):
 	# Move the right wheel forward
 	rightMotor.run(Raspi_MotorHAT.FORWARD)
 
@@ -77,7 +77,7 @@ def turnRight(rightMotor):
 # Description:  Move the left wheel forward and the
 #		right wheel backward
 ####################################################
-def spinLeft(leftMotor, rightMotor):
+def spinRight(leftMotor, rightMotor):
 	# Move the left wheel forward
 	leftMotor.run(Raspi_MotorHAT.FORWARD)
 
@@ -92,7 +92,7 @@ def spinLeft(leftMotor, rightMotor):
 # Description:  Move the right wheels forward and
 #		the left wheel backward
 ####################################################
-def spinRight(leftMotor, rightMotor):
+def spinLeft(leftMotor, rightMotor):
 	# Move the right wheel forward
 	rightMotor.run(Raspi_MotorHAT.FORWARD)
 
