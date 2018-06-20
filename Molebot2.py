@@ -49,7 +49,7 @@ def reverse(leftMotor, rightMotor):
 # Output:       void
 # Description:  Move the left wheel forward
 ####################################################
-def turnRight(leftMotor):
+def turnRight(leftMotor, rightMotor):
 	# Move the left wheel forward
 	leftMotor.run(Raspi_MotorHAT.FORWARD)
 
@@ -62,7 +62,7 @@ def turnRight(leftMotor):
 # Output:       void
 # Description:  Move the right wheel forward
 ####################################################
-def turnLeft(rightMotor):
+def turnLeft(leftMotor, rightMotor):
 	# Move the right wheel forward
 	rightMotor.run(Raspi_MotorHAT.FORWARD)
 
@@ -167,7 +167,7 @@ while (True):
 		time.sleep(0.01)
 
 	print "Turn right"
-	turnRight(rightMotor)
+	turnRight(leftMotor, rightMotor)
 
 	print "\tSpeed up..."
 	for i in range(255):
@@ -180,7 +180,7 @@ while (True):
 		time.sleep(0.01)
 
 	print "Turn left"
-	turnLeft(leftMotor)
+	turnLeft(leftMotor, rightMotor)
 
 	print "\tSpeed up..."
 	for i in range(255):
