@@ -25,16 +25,16 @@ while(True):
     MotorControl.reverse(5)
 
     # Turn to the right
-    MotorControl.turn_right(5)
+    #MotorControl.turn_right(5)
 
     # Turn to the left
-    MotorControl.turn_left(5)
+    #MotorControl.turn_left(5)
 
     # Spin to the right
-    MotorControl.spin_right(5)
+    #MotorControl.spin_right(5)
 
     # Spin to the left
-    MotorControl.spin_left(5)
+    #MotorControl.spin_left(5)
 
 # Cleanup the GPIO
 GPIO.cleanup()
