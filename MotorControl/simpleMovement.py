@@ -40,9 +40,9 @@ def forward(x):
 	GPIO.output(FORWARD_RIGHT, GPIO.LOW)
 	GPIO.output(FORWARD_LEFT, GPIO.LOW)
 
-# Function:	reverse
-# Input:	x - the amount of sleep
-# Output:	void
+# Function:		reverse
+# Input:		x - the amount of sleep
+# Output:		void
 # Definition:	Move the wheel in the reverse direction
 def reverse(x):
 	# Set the GPIO reverse movement output to HIGH
