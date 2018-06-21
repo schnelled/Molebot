@@ -139,85 +139,118 @@ atexit.register(turnOffMotors)
 leftMotor = mh.getMotor(1)
 rightMotor = mh.getMotor(3)
 
-while (True):
-	print "Forward! "
-	forward(leftMotor, rightMotor)
+try:
+	# Continuously loop
+	while (True):
+		# Move the device forward
+		print "Forward! "
+		forward(leftMotor, rightMotor)
 
-	print "\tSpeed up..."
-	for i in range(255):
-		setSpeed(leftMotor, rightMotor, i)
-		time.sleep(0.01)
+		# Speed up the movement by an increament of 1 every 10ms
+		print "\tSpeed up..."
+		for i in range(255):
+			setSpeed(leftMotor, rightMotor, i)
+			time.sleep(0.01)
 
-	print "\tSlow down..."
-	for i in reversed(range(255)):
-		setSpeed(leftMotor, rightMotor, i)
-		time.sleep(0.01)
+		# Slow down the movement by an increament of 1 every 10ms
+		print "\tSlow down..."
+		for i in reversed(range(255)):
+			setSpeed(leftMotor, rightMotor, i)
+			time.sleep(0.01)
 
-	print "Backward! "
-	reverse(leftMotor, rightMotor)
+		# Move the device backward
+		print "Backward! "
+		reverse(leftMotor, rightMotor)
 
-	print "\tSpeed up..."
-	for i in range(255):
-		setSpeed(leftMotor, rightMotor, i)
-		time.sleep(0.01)
+		# Speed up the movement by an increament of 1 every 10ms
+		print "\tSpeed up..."
+		for i in range(255):
+			setSpeed(leftMotor, rightMotor, i)
+			time.sleep(0.01)
 
-	print "\tSlow down..."
-	for i in reversed(range(255)):
-		setSpeed(leftMotor, rightMotor, i)
-		time.sleep(0.01)
+		# Slow down the movement by an increament of 1 every 10ms
+		print "\tSlow down..."
+		for i in reversed(range(255)):
+			setSpeed(leftMotor, rightMotor, i)
+			time.sleep(0.01)
 
-	print "Turn right"
-	turnRight(leftMotor, rightMotor)
+		# Turn the device to the right
+		print "Turn right"
+		turnRight(leftMotor, rightMotor)
 
-	print "\tSpeed up..."
-	for i in range(255):
-		setSpeed(leftMotor, rightMotor, i)
-		time.sleep(0.01)
+		# Speed up the movement by an increament of 1 every 10ms
+		print "\tSpeed up..."
+		for i in range(255):
+			setSpeed(leftMotor, rightMotor, i)
+			time.sleep(0.01)
 
-	print "\tSlow down..."
-	for i in reversed(range(255)):
-		setSpeed(leftMotor, rightMotor, i)
-		time.sleep(0.01)
+		# Slow down the movement by an increament of 1 every 10ms
+		print "\tSlow down..."
+		for i in reversed(range(255)):
+			setSpeed(leftMotor, rightMotor, i)
+			time.sleep(0.01)
 
-	print "Turn left"
-	turnLeft(leftMotor, rightMotor)
+		# Turn the device to the left
+		print "Turn left"
+		turnLeft(leftMotor, rightMotor)
 
-	print "\tSpeed up..."
-	for i in range(255):
-		setSpeed(leftMotor, rightMotor, i)
-		time.sleep(0.01)
+		# Speed up the movement by an increament of 1 every 10ms
+		print "\tSpeed up..."
+		for i in range(255):
+			setSpeed(leftMotor, rightMotor, i)
+			time.sleep(0.01)
 
-	print "\tSlow down..."
-	for i in reversed(range(255)):
-		setSpeed(leftMotor, rightMotor, i)
-		time.sleep(0.01)
+		# Slow down the movement by an increament of 1 every 10ms
+		print "\tSlow down..."
+		for i in reversed(range(255)):
+			setSpeed(leftMotor, rightMotor, i)
+			time.sleep(0.01)
 
-	print "Spin right"
-	spinRight(leftMotor, rightMotor)
+		# Spin the device to the right
+		print "Spin right"
+		spinRight(leftMotor, rightMotor)
 
-	print "\tSpeed up..."
-	for i in range(255):
-		setSpeed(leftMotor, rightMotor, i)
-		time.sleep(0.01)
+		# Speed up the movement by an increament of 1 every 10ms
+		print "\tSpeed up..."
+		for i in range(255):
+			setSpeed(leftMotor, rightMotor, i)
+			time.sleep(0.01)
 
-	print "\tSlow down..."
-	for i in reversed(range(255)):
-		setSpeed(leftMotor, rightMotor, i)
-		time.sleep(0.01)
+		# Slow down the movement by an increament of 1 every 10ms
+		print "\tSlow down..."
+		for i in reversed(range(255)):
+			setSpeed(leftMotor, rightMotor, i)
+			time.sleep(0.01)
 
-	print "Spin left"
-	spinLeft(leftMotor, rightMotor)
+		# Spin the device to the left
+		print "Spin left"
+		spinLeft(leftMotor, rightMotor)
 
-	print "\tSpeed up..."
-	for i in range(255):
-		setSpeed(leftMotor, rightMotor, i)
-		time.sleep(0.01)
+		# Speed up the movement by an increament of 1 every 10ms
+		print "\tSpeed up..."
+		for i in range(255):
+			setSpeed(leftMotor, rightMotor, i)
+			time.sleep(0.01)
 
-	print "\tSlow down..."
-	for i in reversed(range(255)):
-		setSpeed(leftMotor, rightMotor, i)
-		time.sleep(0.01)
+		# Slow down the movement by an increament of 1 every 10ms
+		print "\tSlow down..."
+		for i in reversed(range(255)):
+			setSpeed(leftMotor, rightMotor, i)
+			time.sleep(0.01)
 
-	print "Release"
+		# Release the device
+		print "Release"
+		release(leftMotor, rightMotor)
+		time.sleep(1.0)
+
+# Handle the keyboard interrupt
+except KeyboardInterrupt:
+	# Display message
+	print "Exiting program"
+
+	# Release the device
 	release(leftMotor, rightMotor)
-	time.sleep(1.0)
+
+	# Exit the program
+	sys.exit()
+	
