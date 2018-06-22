@@ -35,7 +35,7 @@ try:
 		cmd = input()
 
 		# Move forward
-		if cmd == 'w':
+		if cmd == "w":
 			MotorControl.forward(leftMotor, rightMotor)
 			MotorControl.setSpeed(leftMotor, rightMotor, 150)
 
