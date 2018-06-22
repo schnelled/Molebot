@@ -71,7 +71,7 @@ try:
 # Handle the keyboard interrupt
 except KeyboardInterrupt:
 	# Display message
-	print "Exiting program"
+	print ("Exiting program")
 
 	# Release the device
 	MotorControl.turnOffMotors()
