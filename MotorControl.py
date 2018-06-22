@@ -8,6 +8,9 @@ BACKWARD_RIGHT = 20
 FORWARD_LEFT = 19
 BACKWARD_LEFT = 16
 
+# Set GPIO to BCM mode
+GPIO.setmode(GPIO.BCM)
+
 # Function: 	forward
 # Input: 		x - the amount of sleep
 # Output: 		void

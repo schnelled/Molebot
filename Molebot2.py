@@ -10,7 +10,7 @@ import atexit
 # Description:  Auto-disables motors on shutdown
 ####################################################
 def turnOffMotors(mh):
-    	mh.getMotor(1).run(Raspi_MotorHAT.RELEASE)
+	mh.getMotor(1).run(Raspi_MotorHAT.RELEASE)
 	mh.getMotor(2).run(Raspi_MotorHAT.RELEASE)
 	mh.getMotor(3).run(Raspi_MotorHAT.RELEASE)
 	mh.getMotor(4).run(Raspi_MotorHAT.RELEASE)
