@@ -8,7 +8,7 @@ import sys
 mh = Raspi_MotorHAT(addr=0x6f)
 
 # Disable motors on startup
-atexit.register(MotorControl.turnOffMotors())
+atexit.register(MotorControl.turnOffMotors(mh))
 
 # Create DC motors
 leftMotor = mh.getMotor(1)
