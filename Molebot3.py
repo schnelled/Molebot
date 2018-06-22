@@ -4,11 +4,23 @@ import MotorControl
 import atexit
 import sys
 
+####################################################
+# Function:     turnOffMotors
+# Input:        mh - 
+# Output:       void
+# Description:  Auto-disables motors on shutdown
+####################################################
+def turnOffMotors():
+	mh.getMotor(1).run(Raspi_MotorHAT.RELEASE)
+	mh.getMotor(2).run(Raspi_MotorHAT.RELEASE)
+	mh.getMotor(3).run(Raspi_MotorHAT.RELEASE)
+	mh.getMotor(4).run(Raspi_MotorHAT.RELEASE)
+
 # Create a default stepper motor HAT object
 mh = Raspi_MotorHAT(addr=0x6f)
 
 # Disable motors on startup
-atexit.register(MotorControl.turnOffMotors(mh))
+atexit.register(turnOffMotors)
 
 # Create DC motors
 leftMotor = mh.getMotor(1)
