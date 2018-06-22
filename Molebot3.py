@@ -32,7 +32,7 @@ try:
 	while (True):
 
 		# Command from keyboard
-		cmd = input()
+		cmd = raw_input()
 
 		# Move forward
 		if cmd == "w":
