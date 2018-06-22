@@ -1,144 +1,134 @@
 # Import needed libraries
-import time
-import RPi.GPIO as GPIO
+from Raspi_MotorHAT import Raspi_MotorHAT, Raspi_DCMotor
 
-# Define the constant variables for motor movement
-FORWARD_RIGHT = 26
-BACKWARD_RIGHT = 20
-FORWARD_LEFT = 19
-BACKWARD_LEFT = 16
+# Define constants
+LEFT_MOTOR = 1
+RIGHT_MOTOR = 3
 
-# Set GPIO to BCM mode
-GPIO.setmode(GPIO.BCM)
-
-# Function: 	forward
-# Input: 		x - the amount of sleep
-# Output: 		void
-# Definition:	Move forward both wheels
-def forward(x):
-	# Set both the forward output to HIGH
-	GPIO.output(FORWARD_RIGHT, GPIO.HIGH)
-	GPIO.output(FORWARD_LEFT, GPIO.HIGH)
-
-	# Display message
-	print("Moving Forward")
-
-	# Sleep for x time
-	time.sleep(x)
-
-	# Set both the forward movement output to LOW
-	GPIO.output(FORWARD_RIGHT, GPIO.LOW)
-	GPIO.output(FORWARD_LEFT, GPIO.LOW)
-
-# Function:		reverse
-# Input:		x - the amount of sleep
-# Output:		void
-# Definition:	Move in reverse both wheels
-def reverse(x):
-    	# Set both the reverse output to HIGH
-    	GPIO.output(BACKWARD_RIGHT, GPIO.HIGH)
-    	GPIO.output(BACKWARD_LEFT, GPIO.HIGH)
-
-   	# Display message
-   	print("Moving Backward")
-
-    	# Sleep for x time
-    	time.sleep(x)
-
-    	# Set both the reverse output to LOW
-    	GPIO.output(BACKWARD_RIGHT, GPIO.LOW)
-    	GPIO.output(BACKWARD_LEFT, GPIO.LOW)
-
-# Function:     turn_right
-# Input:        x - the amount of sleep
+####################################################
+# Function:     turnOffMotors
+# Input:        mh - 
 # Output:       void
-# Definition:   Move the right wheel forward
-def turn_right(x):
-    	# Set the right forward output to HIGH
-    	GPIO.output(FORWARD_RIGHT, GPIO.HIGH)
+# Description:  Auto-disables motors on shutdown
+####################################################
+def turnOffMotors(mh):
+	mh.getMotor(1).run(Raspi_MotorHAT.RELEASE)
+	mh.getMotor(2).run(Raspi_MotorHAT.RELEASE)
+	mh.getMotor(3).run(Raspi_MotorHAT.RELEASE)
+	mh.getMotor(4).run(Raspi_MotorHAT.RELEASE)
 
-    	# Display message
-    	print("Moving Right")
-
-    	# Sleep for x time
-    	time.sleep(x)
-
-    	# Set the right forward output to LOW
-    	GPIO.output(FORWARD_RIGHT, GPIO.LOW)
-
-# Function:     turn_left
-# Input:        x - the amount of sleep
+####################################################
+# Function:     forward
+# Input:        leftMotor - 
+#		rightMotor - 
 # Output:       void
-# Definition:   Move the left wheel forward
-def turn_left(x):
-    	# Set the left forward output to HIGH
-    	GPIO.output(FORWARD_LEFT, GPIO.HIGH)
+# Description:  Move both wheels forward
+####################################################
+def forward(leftMotor, rightMotor):
+	# Move the left wheel forward
+	leftMotor.run(Raspi_MotorHAT.FORWARD)
 
-    	# Display message
-    	print("Moving Left")
+	# Move the right wheel forward
+	rightMotor.run(Raspi_MotorHAT.FORWARD)
 
-    	# Sleep for x time
-    	time.sleep(x)
-
-    	# Set the left forward output to LOW
-   	GPIO.output(FORWARD_LEFT, GPIO.LOW)
-
-# Function:     double_right
-# Input:        x - the amount of sleep
+####################################################
+# Function:     reverse
+# Input:        leftMotor - 
+#		rightMotor - 
 # Output:       void
-# Definition:   Turn the right wheel forward and the left wheel backward
-def spin_right(x):
-    	# Set the right forward output to HIGH
-    	# Set the left reverse output to HIGH
-    	GPIO.output(FORWARD_RIGHT, GPIO.HIGH)
-    	GPIO.output(BACKWARD_LEFT, GPIO.HIGH)
+# Description:  Move both wheels backwards
+####################################################
+def reverse(leftMotor, rightMotor):
+	# Move the left wheel backward
+	leftMotor.run(Raspi_MotorHAT.BACKWARD)
 
-    	# Display message
-    	print("Spinning Right")
+	# Move the right wheel backward
+	rightMotor.run(Raspi_MotorHAT.BACKWARD)
 
-    	# Sleep for x time
-    	time.sleep(x)
-
-    	# Set the right forward output to LOW
-    	# Set the left reverse output to LOW
-    	GPIO.output(FORWARD_RIGHT, GPIO.LOW)
-    	GPIO.output(BACKWARD_LEFT, GPIO.LOW)
-
-# Function:     double_left
-# Input:        x - the amount of sleep
+####################################################
+# Function:     turnLeft
+# Input:        leftMotor -  
 # Output:       void
-# Definition:   Turn the left wheel forward and the right wheel backward
-def spin_left(x):
-    	# Move the left forward output to HIGH
-    	# Move the right reverse output to HIGH
-    	GPIO.output(FORWARD_LEFT, GPIO.HIGH)
-    	GPIO.output(BACKWARD_RIGHT, GPIO.HIGH)
+# Description:  Move the left wheel forward
+####################################################
+def turnRight(leftMotor, rightMotor):
+	# Move the left wheel forward
+	leftMotor.run(Raspi_MotorHAT.FORWARD)
 
-    	# Display message
-    	print("Spinning Left")
+	# Stop the right wheel
+	rightMotor.run(Raspi_MotorHAT.RELEASE)
 
-    	# Sleep for x time
-    	time.sleep(x)
+####################################################
+# Function:     turnRight
+# Input:        rightMotor - 
+# Output:       void
+# Description:  Move the right wheel forward
+####################################################
+def turnLeft(leftMotor, rightMotor):
+	# Move the right wheel forward
+	rightMotor.run(Raspi_MotorHAT.FORWARD)
 
-    	# Set the left forward output to LOW
-    	# Set the right forward output to LOW
-    	GPIO.output(FORWARD_LEFT, GPIO.LOW)
-    	GPIO.output(BACKWARD_RIGHT, GPIO.LOW)
+	# Stop the left wheel
+	leftMotor.run(Raspi_MotorHAT.RELEASE)
 
-# Function:		stop
-# Input:		x -  the amount of sleep
-# Output:		void
-# Definition:	Both wheels stop movement
-def stop(x):
-	# Set the all GPIOs to low
-	GPIO.output(FORWARD_LEFT, GPIO.LOW)
-	GPIO.output(FORWARD_RIGHT, GPIO.LOW)
-	GPIO.output(BACKWARD_LEFT, GPIO.LOW)
-	GPIO.output(BACKWARD_RIGHT, GPIO.LOW)
+####################################################
+# Function:     spinLeft
+# Input:        leftMotor - 
+#		rightMotor - 
+# Output:       void
+# Description:  Move the left wheel forward and the
+#		right wheel backward
+####################################################
+def spinRight(leftMotor, rightMotor):
+	# Move the left wheel forward
+	leftMotor.run(Raspi_MotorHAT.FORWARD)
 
-	# Display message
-    	print("Stopping")
+	# Move the right wheel backward
+	rightMotor.run(Raspi_MotorHAT.BACKWARD)
 
-    	# Sleep for x time
-    	time.sleep(x)
+####################################################
+# Function:     spinRight
+# Input:        leftMotor - 
+#		rightMotor - 
+# Output:       void
+# Description:  Move the right wheels forward and
+#		the left wheel backward
+####################################################
+def spinLeft(leftMotor, rightMotor):
+	# Move the right wheel forward
+	rightMotor.run(Raspi_MotorHAT.FORWARD)
+
+	# Move the left wheel backward
+	leftMotor.run(Raspi_MotorHAT.BACKWARD)
 	
+
+####################################################
+# Function:     stop
+# Input:        leftMotor - 
+#		rightMotor - 
+# Output:       void
+# Description:  Release the wheels,stopping movement
+####################################################
+def stop(leftMotor, rightMotor):
+	# Stop the right wheel
+	rightMotor.run(Raspi_MotorHAT.RELEASE)
+
+	# Stop the left wheel
+	leftMotor.run(Raspi_MotorHAT.RELEASE)
+
+####################################################
+# Function:     setSpeed
+# Input:        leftMotor - 
+#		rightMotor - 
+#		speed - 
+# Output:       void
+# Description:  Set the speed to the wheels
+####################################################
+def setSpeed(leftMotor, rightMotor, speed):
+	# Set the speed of the right wheel
+	rightMotor.setSpeed(speed)
+
+	# Set the speed of the left wheel
+	leftMotor.setSpeed(speed)
+
+
