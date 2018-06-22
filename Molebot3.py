@@ -1,5 +1,5 @@
 # Import the needed libraries
-import Raspi_MotorHAT import Raspi_MotorHAT, Raspi_DCMotor
+from Raspi_MotorHAT import Raspi_MotorHAT, Raspi_DCMotor
 import MotorControl
 import atexit
 import sys
