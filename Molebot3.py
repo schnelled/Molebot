@@ -146,7 +146,7 @@ def stop(x):
 mh = Raspi_MotorHAT(addr=0x6f)
 
 # Disable motors on startup
-atexit.register(MotorControl.stop(0))
+atexit.register(stop(0))
 
 # Create DC motors
 leftMotor = mh.getMotor(1)
@@ -160,31 +160,31 @@ while(True):
 
 	# Forward command
 	if cmd == 'w':
-		MotorControl.forward(1)
+		forward(1)
 
 	# Backward command
 	if cmd == 's':
-		MotorControl.reverse(1)
+		reverse(1)
 
 	# Right turn
 	if cmd == 'd':
-		MotorControl.turn_right(1)
+		turn_right(1)
 
 	# Left turn
 	if cmd == 'a':
-		MotorControl.turn_left(1)
+		turn_left(1)
 
 	# Right spin
 	if cmd == 'e':
-		MotorControl.spin_right(1)
+		spin_right(1)
 
 	# Left spin
 	if cmd == 'q':
-		MotorControl.spin_left(1)
+		spin_left(1)
 
 	# Stop
 	if cmd == 'r':
-		MotorControl.stop(1)
+		stop(1)
 
 	# Kill the program
 	if cmd == 'p':
