@@ -3,7 +3,6 @@ from Raspi_MotorHAT import Raspi_MotorHAT, Raspi_DCMotor
 import MotorControl
 import atexit
 import sys
-import string
 
 ####################################################
 # Function:     turnOffMotors
