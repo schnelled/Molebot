@@ -56,4 +56,4 @@ print "Distance: ", distance, "cm"
 
 # Cleanup the GPIO
 GPIO.cleanup()
-GPIO.cleanup()
+
