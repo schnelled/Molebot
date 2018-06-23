@@ -11,7 +11,7 @@ GPIO.setmode(GPIO.BCM)
 
 # Initialize the GPIO input and output
 GPIO.setup(TRIG, GPIO.OUT)
-GPIO.setup(ECHO, GPIO.OUT)
+GPIO.setup(ECHO, GPIO.IN)
 
 # Set the output to low
 GPIO.output(TRIG, False)
