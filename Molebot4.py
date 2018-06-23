@@ -73,7 +73,7 @@ try:
 		distance = pulseDuration * 17150
 		
 		# Check if object is in range
-		while distance < 10:
+		while distance < 20:
 			# Stop
 			MotorControl.stop(leftMotor, rightMotor)
 
@@ -82,10 +82,10 @@ try:
 
 			# Spin to the right
 			MotorControl.spinRight(leftMotor, rightMotor)
-			MotorControl.setSpeed(leftMotor, rightMotor, 200)
+			MotorControl.setSpeed(leftMotor, rightMotor, 175)
 
-			# Pause for 1oth of a second
-			time.sleep(0.1)
+			# Pause for a half second
+			time.sleep(0.5)
 
 			# Stop
 			MotorControl.stop(leftMotor, rightMotor)
@@ -116,7 +116,7 @@ try:
 
 		# Move forward
 		MotorControl.forward(leftMotor, rightMotor)
-		MotorControl.setSpeed(leftMotor, rightMotor, 200)
+		MotorControl.setSpeed(leftMotor, rightMotor, 175)
 			
 
 # Handle the keyboard interrupt
