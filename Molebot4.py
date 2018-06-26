@@ -22,6 +22,9 @@ def turnOffMotors():
 	mh.getMotor(3).run(Raspi_MotorHAT.RELEASE)
 	mh.getMotor(4).run(Raspi_MotorHAT.RELEASE)
 
+# Declare stuck counter
+counter = 0
+
 # Create a default stepper motor HAT object
 mh = Raspi_MotorHAT(addr=0x6f)
 
@@ -113,10 +116,61 @@ try:
 			# Obtain the distance in cm
 			distance = pulseDuration * 17150
 
+			# Increament the value of the counter
+			counter += 1
 
+			# Check if the robot is stuck
+			if counter >= 3:
+
+				# Reverse the robot
+				MotorControl.reverse(leftMotor, rightMotor)
+				MotorControl.setSpeed(leftMotor, rightMotor, 175)
+
+				# Wait a second
+				time.sleep(1)
+
+				# Turn around the robot
+				MotorControl.spinRight(leftMotor, rightMotor)
+				MotorControl.setSpeed(leftMotor, rightMotor, 175)
+
+				# Stop
+				MotorControl.stop(leftMotor, rightMotor)
+
+				# Set the output to high
+				GPIO.output(TRIG, True)
+
+				# Pause for 10 microseconds
+				time.sleep(0.00001)
+
+				# Set the output to low
+				GPIO.output(TRIG, False)
+
+				# While echo is low record the start time
+				while GPIO.input(ECHO) == 0:
+					pulseStart = time.time()
+
+				# While echo is high record the end time
+				while GPIO.input(ECHO) == 1:
+					pulseEnd = time.time()
+
+				# Measure the duration of the pulse
+				pulseDuration = pulseEnd - pulseStart
+
+				# Obtain the distance in cm
+				distance = pulseDuration * 17150
+
+				# Check the distance
+				if distance > 20:
+				
+					# Reset the counter
+					counter = 0
+			
 		# Move forward
 		MotorControl.forward(leftMotor, rightMotor)
 		MotorControl.setSpeed(leftMotor, rightMotor, 175)
+
+		# Reset the counter
+		counter = 0
 			
 
 # Handle the keyboard interrupt
