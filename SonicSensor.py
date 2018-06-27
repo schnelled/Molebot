@@ -41,6 +41,19 @@ def distance():
 
 # Define testing functionality
 if __name__ == "__main__":
+	# Set the GPIO to BCM mode
+	GPIO.setmode(GPIO.BCM)
+
+	# Initialize the GPIO input and output
+	GPIO.setup(SonicSensor.TRIG, GPIO.OUT)
+	GPIO.setup(SonicSensor.ECHO, GPIO.IN)
+
+	# Set the output to low
+	GPIO.output(SonicSensor.TRIG, False)
+
+	# Pause for a second
+	time.sleep(1)
+
 	# Obtain the distance
 	distance = distance()
 
