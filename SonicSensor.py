@@ -1,5 +1,6 @@
 # Include needed modules
 import RPi.GPIO as GPIO
+import time
 
 # Define constants
 TRIG = 23
