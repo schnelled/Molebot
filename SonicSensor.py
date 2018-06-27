@@ -45,8 +45,8 @@ if __name__ == "__main__":
 	GPIO.setmode(GPIO.BCM)
 
 	# Initialize the GPIO input and output
-	GPIO.setup(SonicSensor.TRIG, GPIO.OUT)
-	GPIO.setup(SonicSensor.ECHO, GPIO.IN)
+	GPIO.setup(TRIG, GPIO.OUT)
+	GPIO.setup(ECHO, GPIO.IN)
 
 	# Set the output to low
 	GPIO.output(SonicSensor.TRIG, False)
