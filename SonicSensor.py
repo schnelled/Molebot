@@ -38,3 +38,12 @@ def distance():
 
 	# Return the distance
 	return distance
+
+# Define testing functionality
+if __name__ == "__main__":
+	# Obtain the distance
+	distance = distance()
+
+	# Display the distance
+	print "The distance: " + distance
+
