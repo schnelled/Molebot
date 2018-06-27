@@ -58,5 +58,5 @@ if __name__ == "__main__":
 	distance = distance()
 
 	# Display the distance
-	print "The distance: " + distance
+	print "The distance: " + str(distance)
 
