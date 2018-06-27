@@ -49,7 +49,7 @@ if __name__ == "__main__":
 	GPIO.setup(ECHO, GPIO.IN)
 
 	# Set the output to low
-	GPIO.output(SonicSensor.TRIG, False)
+	GPIO.output(TRIG, False)
 
 	# Pause for a second
 	time.sleep(1)
