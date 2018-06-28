@@ -20,9 +20,6 @@ def turnOffMotors():
 	mh.getMotor(3).run(Raspi_MotorHAT.RELEASE)
 	mh.getMotor(4).run(Raspi_MotorHAT.RELEASE)
 
-# Declare state variable
-state
-
 # Create a default stepper motor HAT object
 mh = Raspi_MotorHAT(addr=0x6f)
 
