@@ -82,7 +82,7 @@ try:
 			time.sleep(1)
 
 			# Display the distance
-			print "Step0: " + str(distance)
+			print "Step1: " + str(distance)
 
 			# Turn the scanner to step 2
 			ServoControl.step_2()
@@ -94,7 +94,7 @@ try:
 			time.sleep(1)
 
 			# Display the distance
-			print "Step0: " + str(distance)
+			print "Step2: " + str(distance)
 
 			# Turn the scanner to step 3
 			ServoControl.step_3()
@@ -106,7 +106,7 @@ try:
 			time.sleep(1)
 
 			# Display the distance
-			print "Step0: " + str(distance)
+			print "Step3: " + str(distance)
 
 			# Turn the scanner to step 4
 			ServoControl.step_4()
@@ -118,7 +118,7 @@ try:
 			time.sleep(1)
 
 			# Display the distance
-			print "Step0: " + str(distance)
+			print "Step4: " + str(distance)
 
 # Handle the keyboard interrupt
 except KeyboardInterrupt:
