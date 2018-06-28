@@ -11,38 +11,103 @@ servoMin = 275  # Min pulse length out of 4096
 servoMax = 475  # Max pulse length out of 4096
 servoMid = 375
 
-def setServoPulse(channel, pulse):
-	pulseLength = 1000000                   # 1,000,000 us per second
-	pulseLength /= 60                       # 60 Hz
-	print "%d us per period" % pulseLength
-	pulseLength /= 4096                     # 12 bits of resolution
-	print "%d us per bit" % pulseLength
-	pulse *= 1000
-	pulse /= pulseLength
-	pwm.setPWM(channel, 0, pulse)
+####################################################
+# Function:     step_0
+# Input:         
+# Output:       
+# Description:
+####################################################
+def step_0():
+	# Set frequency to 60 Hz
+	pwm.setPWMFreq(60)
 
-pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
+	# Set the pulse width modulation
+	pwm.setPWM(0, 0, servoMin)
 
-# Declare and initailize the counter
-counter = servoMin
+####################################################
+# Function:     step_1
+# Input:         
+# Output:       
+# Description:
+####################################################
+def step_1():
+	# Set frequency to 60 Hz
+	pwm.setPWMFreq(60)
+
+	# Set the pulse width modulation
+	pwm.setPWM(0, 0, servoMin + 50)
+
+####################################################
+# Function:     step_2
+# Input:         
+# Output:       
+# Description:
+####################################################
+def step_2():
+	# Set frequency to 60 Hz
+	pwm.setPWMFreq(60)
+
+	# Set the pulse width modulation
+	pwm.setPWM(0, 0, servoMid)
+
+####################################################
+# Function:     step_3
+# Input:         
+# Output:       
+# Description:
+####################################################
+def step_3():
+	# Set frequency to 60 Hz
+	pwm.setPWMFreq(60)
+
+	# Set the pulse width modulation
+	pwm.setPWM(0, 0, servoMid + 50)
+
+####################################################
+# Function:     step_4
+# Input:         
+# Output:       
+# Description:
+####################################################
+def step_4():
+	# Set frequency to 60 Hz
+	pwm.setPWMFreq(60)
+
+	# Set the pulse width modulation
+	pwm.setPWM(0, 0, servoMax)
+
+# Define testing functionality
+if __name__ == "__main__":
 while (True):
-	# Change speed of continuous servo on channel O
-	while counter <= servoMax:
-		# Set the pulse width modulation
-		pwm.setPWM(0, 0, counter)
+	# Move to position 0
+	step_0()
 
-		# Pause for a second
-		time.sleep(1)
+	# Pause for a second
+	time.sleep(1)
 
-		# Display the value
-		print "Current pulse length: " + str(counter)
+	# Move to position 1
+	step_1()
 
-		# Increament the counter
-		counter += 50
+	# Pause for a second
+	time.sleep(1)
 
+	# Move to position 2
+	step_2()
 
-	# Reset the position
-	counter = servoMin
+	# Pause for a second
+	time.sleep(1)
+
+	# Move to position 3
+	step_3()
+
+	# Pause for a second
+	time.sleep(1)
+
+	# Move to position 4
+	step_4()
+
+	# Pause for a second
+	time.sleep(1)
 
 
 
