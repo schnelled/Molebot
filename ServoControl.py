@@ -6,9 +6,10 @@ import time
 # bmp = PWM(0x40, debug=True)
 pwm = PWM(0x6F)
 
-#
-servoMin = 250  # Min pulse length out of 4096
-servoMax = 450  # Max pulse length out of 4096
+# Define constants
+servoMin = 275  # Min pulse length out of 4096
+servoMax = 475  # Max pulse length out of 4096
+servoMid = 375
 
 def setServoPulse(channel, pulse):
 	pulseLength = 1000000                   # 1,000,000 us per second
