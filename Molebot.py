@@ -49,6 +49,9 @@ time.sleep(1)
 try:
 	# Continuously loop
 	while (True):
+		# Set default position
+		ServoControl.step_2()
+				
 		# Scan ahead for object
 		distance = SonicSensor.distance()
 		
