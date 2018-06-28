@@ -161,60 +161,60 @@ try:
 			print "Step4: " + str(tempDist)
 
 			# Check the state
-			if state == 0:
+			#if state == 0:
 				# Turn hard right
-				MotorControl.spinRight(leftMotor, rightMotor)
-				MotorControl.setSpeed(leftMotor, rightMotor, 200)
+				#MotorControl.spinRight(leftMotor, rightMotor)
+				#MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
-				time.sleep(0.35)
+				#time.sleep(0.35)
 
 				# Stop all movement
-				MotorControl.stop(leftMotor, rightMotor)
+				#MotorControl.stop(leftMotor, rightMotor)
 
-			elif state == 1:
+			#elif state == 1:
 				# Turn right
-				MotorControl.spinRight(leftMotor, rightMotor)
-				MotorControl.setSpeed(leftMotor, rightMotor, 200)
+				#MotorControl.spinRight(leftMotor, rightMotor)
+				#MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
-				time.sleep(0.2)
+				#time.sleep(0.2)
 
 				# Stop all movement
-				MotorControl.stop(leftMotor, rightMotor)
+				#MotorControl.stop(leftMotor, rightMotor)
 
-			elif state == 2:
+			#elif state == 2:
 				# Go backward
-				MotorControl.reverse(leftMotor, rightMotor)
-				MotorControl.setSpeed(leftMotor, rightMotor, 200)
+				#MotorControl.reverse(leftMotor, rightMotor)
+				#MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
-				time.sleep(1)
+				#time.sleep(1)
 
 				# Stop all movement
-				MotorControl.stop(leftMotor, rightMotor)
+				#MotorControl.stop(leftMotor, rightMotor)
 
-			elif state == 3:
+			#elif state == 3:
 				# Turn left
-				MotorControl.spinLeft(leftMotor, rightMotor)
-				MotorControl.setSpeed(leftMotor, rightMotor, 200)
+				#MotorControl.spinLeft(leftMotor, rightMotor)
+				#MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
-				time.sleep(0.2)
+				#time.sleep(0.2)
 
 				# Stop all movement
-				MotorControl.stop(leftMotor, rightMotor)
+				#MotorControl.stop(leftMotor, rightMotor)
 
-			else:
+			#else:
 				# Turn hard left
-				MotorControl.spinLeft(leftMotor, rightMotor)
-				MotorControl.setSpeed(leftMotor, rightMotor, 200)
+				#MotorControl.spinLeft(leftMotor, rightMotor)
+				#MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
-				time.sleep(0.35)
+				#time.sleep(0.35)
 
 				# Stop all movement
-				MotorControl.stop(leftMotor, rightMotor)
+				#MotorControl.stop(leftMotor, rightMotor)
 
 
 # Handle the keyboard interrupt
