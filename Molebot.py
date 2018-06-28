@@ -46,11 +46,18 @@ time.sleep(1)
 try:
 	# Continuously loop
 	while (True):
+
 		# Set default position
 		ServoControl.step_2()
+
+		# Pause for a half second after scan
+		time.sleep(1)
 				
 		# Scan ahead for object
 		distance = SonicSensor.distance()
+
+		# Pause for a half second after scan
+		time.sleep(1)
 
 		# Display current distance
 		print "Current distance: " + str(distance)
@@ -60,6 +67,9 @@ try:
 			# Stop
 			MotorControl.stop(leftMotor, rightMotor)
 
+			# Set temp distance equal to distance
+			tempDist = distance
+
 			# Turn the scanner to step 0
 			ServoControl.step_0()
 
@@ -67,19 +77,19 @@ try:
 			time.sleep(1)
 
 			# Collect distance data
-			tempDist = SonicSensor.distance()
+			scan = SonicSensor.distance()
 
 			# Pause for a half second after scan
 			time.sleep(1)
 
 			# Collect distance data if larger
-			if tempDist > distance:
+			if scan > tempDist:
 				# Collect distance data and change state to 1
-				distance = tempDist
+				tempDist = scan
 				state = 0
 
 			# Display the distance
-			print "Step0: " + str(distance)
+			print "Step0: " + str(scan)
 
 			# Turn the scanner to step 1
 			ServoControl.step_1()
@@ -94,13 +104,13 @@ try:
 			time.sleep(1)
 
 			# Collect distance data if larger
-			if tempDist > distance:
+			if scan > tempDist:
 				# Collect distance data and change state to 1
-				distance = tempDist
+				tempDist = scan
 				state = 1
 
 			# Display the distance
-			print "Step1: " + str(tempDist)
+			print "Step1: " + str(scan)
 
 			# Turn the scanner to step 2
 			ServoControl.step_2()
@@ -115,13 +125,13 @@ try:
 			time.sleep(1)
 
 			# Collect distance data if larger
-			if tempDist > distance:
+			if scan > tempDist:
 				# Collect distance data and change state to 2
-				distance = tempDist
+				tempDist = scan
 				state = 2
 
 			# Display the distance
-			print "Step2: " + str(tempDist)
+			print "Step2: " + str(scan)
 
 			# Turn the scanner to step 3
 			ServoControl.step_3()
@@ -136,13 +146,13 @@ try:
 			time.sleep(1)
 
 			# Collect distance data if larger
-			if tempDist > distance:
+			if scan > tempDist:
 				# Collect distance data and change state to 3
-				distance = tempDist
+				tempDist = scan
 				state = 3
 
 			# Display the distance
-			print "Step3: " + str(tempDist)
+			print "Step3: " + str(scan)
 
 			# Turn the scanner to step 4
 			ServoControl.step_4()
@@ -157,13 +167,13 @@ try:
 			time.sleep(1)
 
 			# Collect distance data if larger
-			if tempDist > distance:
+			if scan > tempDist:
 				# Collect distance data and change state to 4
-				distance = tempDist
+				tempDist = scan
 				state = 4
 
 			# Display the distance
-			print "Step4: " + str(tempDist)
+			print "Step4: " + str(scan)
 
 			# Check the state
 			#if state == 0:
