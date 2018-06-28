@@ -61,7 +61,7 @@ try:
 			ServoControl.step_0()
 
 			# Pause for a half second before scan
-			time.sleep(0.5)
+			time.sleep(1)
 
 			# Collect distance data
 			distance = SonicSensor.distance()
@@ -70,7 +70,7 @@ try:
 			state = 0
 
 			# Pause for a half second after scan
-			time.sleep(0.5)
+			time.sleep(1)
 
 			# Display the distance
 			print "Step0: " + str(distance)
@@ -79,7 +79,7 @@ try:
 			ServoControl.step_1()
 
 			# Pause for a half second before scan
-			time.sleep(0.5)
+			time.sleep(1)
 
 			# Collect distance data
 			tempDist = SonicSensor.distance()
@@ -92,7 +92,7 @@ try:
 				state = 1
 
 			# Pause for a half second after scan
-			time.sleep(0.5)
+			time.sleep(1)
 
 			# Display the distance
 			print "Step1: " + str(tempDist)
@@ -101,7 +101,7 @@ try:
 			ServoControl.step_2()
 
 			# Pause for a half second before scan
-			time.sleep(0.5)
+			time.sleep(1)
 
 			# Collect distance data
 			tempDist = SonicSensor.distance()
@@ -113,7 +113,7 @@ try:
 				state = 2
 
 			# Pause for a half second after scan
-			time.sleep(0.5)
+			time.sleep(1)
 
 			# Display the distance
 			print "Step2: " + str(tempDist)
@@ -122,7 +122,7 @@ try:
 			ServoControl.step_3()
 
 			# Pause for a half second before scan
-			time.sleep(0.5)
+			time.sleep(1)
 
 			# Collect distance data
 			tempDist = SonicSensor.distance()
@@ -134,7 +134,7 @@ try:
 				state = 3
 
 			# Pause for a half second after scan
-			time.sleep(0.5)
+			time.sleep(1)
 
 			# Display the distance
 			print "Step3: " + str(tempDist)
@@ -143,7 +143,7 @@ try:
 			ServoControl.step_4()
 
 			# Pause for a half second before scan
-			time.sleep(0.5)
+			time.sleep(1)
 
 			# Collect distance data
 			tempDist = SonicSensor.distance()
@@ -155,7 +155,7 @@ try:
 				state = 4
 
 			# Pause for a half second after scan
-			time.sleep(0.5)
+			time.sleep(1)
 
 			# Display the distance
 			print "Step4: " + str(tempDist)
