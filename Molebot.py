@@ -98,7 +98,7 @@ try:
 			time.sleep(1)
 
 			# Collect distance data
-			tempDist = SonicSensor.distance()
+			scan = SonicSensor.distance()
 
 			# Pause for a half second after scan
 			time.sleep(1)
@@ -119,7 +119,7 @@ try:
 			time.sleep(1)
 
 			# Collect distance data
-			tempDist = SonicSensor.distance()
+			scan = SonicSensor.distance()
 
 			# Pause for a half second after scan
 			time.sleep(1)
@@ -140,7 +140,7 @@ try:
 			time.sleep(1)
 
 			# Collect distance data
-			tempDist = SonicSensor.distance()
+			scan = SonicSensor.distance()
 
 			# Pause for a half second after scan
 			time.sleep(1)
@@ -161,7 +161,7 @@ try:
 			time.sleep(1)
 
 			# Collect distance data
-			tempDist = SonicSensor.distance()
+			scan = SonicSensor.distance()
 
 			# Pause for a half second after scan
 			time.sleep(1)
