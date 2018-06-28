@@ -67,13 +67,16 @@ try:
 			time.sleep(1)
 
 			# Collect distance data
-			distance = SonicSensor.distance()
-
-			# Set the state equal to 0
-			state = 0
+			tempDist = SonicSensor.distance()
 
 			# Pause for a half second after scan
 			time.sleep(1)
+
+			# Collect distance data if larger
+			if tempDist > distance:
+				# Collect distance data and change state to 1
+				distance = tempDist
+				state = 0
 
 			# Display the distance
 			print "Step0: " + str(distance)
@@ -87,15 +90,14 @@ try:
 			# Collect distance data
 			tempDist = SonicSensor.distance()
 
+			# Pause for a half second after scan
+			time.sleep(1)
 
 			# Collect distance data if larger
 			if tempDist > distance:
 				# Collect distance data and change state to 1
 				distance = tempDist
 				state = 1
-
-			# Pause for a half second after scan
-			time.sleep(1)
 
 			# Display the distance
 			print "Step1: " + str(tempDist)
@@ -109,14 +111,14 @@ try:
 			# Collect distance data
 			tempDist = SonicSensor.distance()
 
+			# Pause for a half second after scan
+			time.sleep(1)
+
 			# Collect distance data if larger
 			if tempDist > distance:
 				# Collect distance data and change state to 2
 				distance = tempDist
 				state = 2
-
-			# Pause for a half second after scan
-			time.sleep(1)
 
 			# Display the distance
 			print "Step2: " + str(tempDist)
@@ -130,14 +132,14 @@ try:
 			# Collect distance data
 			tempDist = SonicSensor.distance()
 
+			# Pause for a half second after scan
+			time.sleep(1)
+
 			# Collect distance data if larger
 			if tempDist > distance:
 				# Collect distance data and change state to 3
 				distance = tempDist
 				state = 3
-
-			# Pause for a half second after scan
-			time.sleep(1)
 
 			# Display the distance
 			print "Step3: " + str(tempDist)
@@ -151,14 +153,14 @@ try:
 			# Collect distance data
 			tempDist = SonicSensor.distance()
 
+			# Pause for a half second after scan
+			time.sleep(1)
+
 			# Collect distance data if larger
 			if tempDist > distance:
 				# Collect distance data and change state to 4
 				distance = tempDist
 				state = 4
-
-			# Pause for a half second after scan
-			time.sleep(1)
 
 			# Display the distance
 			print "Step4: " + str(tempDist)
