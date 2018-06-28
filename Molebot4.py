@@ -63,7 +63,7 @@ try:
 			MotorControl.spinRight(leftMotor, rightMotor)
 			MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
-			# Pause for a half second
+			# Pause for a quater second
 			time.sleep(0.25)
 
 			# Stop
@@ -104,6 +104,9 @@ try:
 				
 					# Reset the counter
 					counter = 0
+
+					# Pause for a quater second
+					time.sleep(0.25)
 			
 		# Move forward
 		MotorControl.forward(leftMotor, rightMotor)
