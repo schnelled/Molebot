@@ -74,13 +74,13 @@ try:
 			ServoControl.step_0()
 
 			# Pause for a half second before scan
-			time.sleep(1)
+			time.sleep(2)
 
 			# Collect distance data
 			scan = SonicSensor.distance()
 
 			# Pause for a half second after scan
-			time.sleep(1)
+			time.sleep(2)
 
 			# Collect distance data if larger
 			if scan > tempDist:
@@ -158,13 +158,13 @@ try:
 			ServoControl.step_4()
 
 			# Pause for a half second before scan
-			time.sleep(1)
+			time.sleep(2)
 
 			# Collect distance data
 			scan = SonicSensor.distance()
 
 			# Pause for a half second after scan
-			time.sleep(1)
+			time.sleep(2)
 
 			# Collect distance data if larger
 			if scan > tempDist:
