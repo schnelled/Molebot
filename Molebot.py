@@ -81,14 +81,21 @@ try:
 			# Pause for a half second before scan
 			time.sleep(0.5)
 
+			# Collect distance data
+			tempDist = SonicSensor.distance()
+
+
 			# Collect distance data if larger
-			if SonicSensor.distance() > distance:
+			if tempDist > distance:
 				# Collect distance data and change state to 1
-				distance = SonicSensor.distance()
+				distance = tempDist
 				state = 1
 
 			# Pause for a half second after scan
 			time.sleep(0.5)
+
+			# Display the distance
+			print "Step1: " + str(tempDist)
 
 			# Turn the scanner to step 2
 			ServoControl.step_2()
@@ -96,14 +103,20 @@ try:
 			# Pause for a half second before scan
 			time.sleep(0.5)
 
+			# Collect distance data
+			tempDist = SonicSensor.distance()
+
 			# Collect distance data if larger
-			if SonicSensor.distance() > distance:
+			if tempDist > distance:
 				# Collect distance data and change state to 2
-				distance = SonicSensor.distance()
+				distance = tempDist
 				state = 2
 
 			# Pause for a half second after scan
 			time.sleep(0.5)
+
+			# Display the distance
+			print "Step2: " + str(tempDist)
 
 			# Turn the scanner to step 3
 			ServoControl.step_3()
@@ -111,14 +124,20 @@ try:
 			# Pause for a half second before scan
 			time.sleep(0.5)
 
+			# Collect distance data
+			tempDist = SonicSensor.distance()
+
 			# Collect distance data if larger
-			if SonicSensor.distance() > distance:
+			if tempDist > distance:
 				# Collect distance data and change state to 3
-				distance = SonicSensor.distance()
+				distance = tempDist
 				state = 3
 
 			# Pause for a half second after scan
 			time.sleep(0.5)
+
+			# Display the distance
+			print "Step3: " + str(tempDist)
 
 			# Turn the scanner to step 4
 			ServoControl.step_4()
@@ -126,14 +145,20 @@ try:
 			# Pause for a half second before scan
 			time.sleep(0.5)
 
+			# Collect distance data
+			tempDist = SonicSensor.distance()
+
 			# Collect distance data if larger
-			if SonicSensor.distance() > distance:
+			if tempDist > distance:
 				# Collect distance data and change state to 4
-				distance = SonicSensor.distance()
+				distance = tempDist
 				state = 4
 
 			# Pause for a half second after scan
 			time.sleep(0.5)
+
+			# Display the distance
+			print "Step4: " + str(tempDist)
 
 			# Check the state
 			if state == 0:
