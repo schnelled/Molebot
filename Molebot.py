@@ -119,3 +119,17 @@ try:
 
 			# Display the distance
 			print "Step0: " + str(distance)
+
+# Handle the keyboard interrupt
+except KeyboardInterrupt:
+	# Display message
+	print ("Exiting program")
+
+	# Release the device
+	MotorControl.turnOffMotors()
+
+	# Cleanup the GPIO
+	GPIO.cleanup()
+
+	# Exit the program
+	sys.exit()
