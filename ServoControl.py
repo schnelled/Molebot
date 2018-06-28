@@ -78,36 +78,36 @@ def step_4():
 
 # Define testing functionality
 if __name__ == "__main__":
-while (True):
-	# Move to position 0
-	step_0()
+	while (True):
+		# Move to position 0
+		step_0()
 
-	# Pause for a second
-	time.sleep(1)
+		# Pause for a second
+		time.sleep(1)
 
-	# Move to position 1
-	step_1()
+		# Move to position 1
+		step_1()
 
-	# Pause for a second
-	time.sleep(1)
+		# Pause for a second
+		time.sleep(1)
 
-	# Move to position 2
-	step_2()
+		# Move to position 2
+		step_2()
 
-	# Pause for a second
-	time.sleep(1)
+		# Pause for a second
+		time.sleep(1)
 
-	# Move to position 3
-	step_3()
+		# Move to position 3
+		step_3()
 
-	# Pause for a second
-	time.sleep(1)
+		# Pause for a second
+		time.sleep(1)
 
-	# Move to position 4
-	step_4()
+		# Move to position 4
+		step_4()
 
-	# Pause for a second
-	time.sleep(1)
+		# Pause for a second
+		time.sleep(1)
 
 
 
