@@ -20,8 +20,8 @@ def turnOffMotors():
 	mh.getMotor(3).run(Raspi_MotorHAT.RELEASE)
 	mh.getMotor(4).run(Raspi_MotorHAT.RELEASE)
 
-# Declare stuck counter
-counter = 0
+# Declare state variable
+state
 
 # Create a default stepper motor HAT object
 mh = Raspi_MotorHAT(addr=0x6f)
@@ -63,13 +63,16 @@ try:
 			# Turn the scanner to step 0
 			ServoControl.step_0()
 
-			# Pause for a second
+			# Pause for a half second before scan
 			time.sleep(0.5)
 
 			# Collect distance data
 			distance = SonicSensor.distance()
 
-			# Pause for a second
+			# Set the state equal to 0
+			state = 0
+
+			# Pause for a half second after scan
 			time.sleep(0.5)
 
 			# Display the distance
@@ -78,66 +81,77 @@ try:
 			# Turn the scanner to step 1
 			ServoControl.step_1()
 
-			# Pause for a second
+			# Pause for a half second before scan
 			time.sleep(0.5)
 
 			# Collect distance data if larger
 			if SonicSensor.distance() > distance:
+				# Collect distance data and change state to 1
 				distance = SonicSensor.distance()
+				state = 1
 
-			# Pause for a second
+			# Pause for a half second after scan
 			time.sleep(0.5)
-
-			# Display the distance
-			print "Step1: " + str(distance)
 
 			# Turn the scanner to step 2
 			ServoControl.step_2()
 
-			# Pause for a second
+			# Pause for a half second before scan
 			time.sleep(0.5)
 
 			# Collect distance data if larger
 			if SonicSensor.distance() > distance:
+				# Collect distance data and change state to 2
 				distance = SonicSensor.distance()
+				state = 2
 
-			# Pause for a second
+			# Pause for a half second after scan
 			time.sleep(0.5)
-
-			# Display the distance
-			print "Step2: " + str(distance)
 
 			# Turn the scanner to step 3
 			ServoControl.step_3()
 
-			# Pause for a second
+			# Pause for a half second before scan
 			time.sleep(0.5)
 
 			# Collect distance data if larger
 			if SonicSensor.distance() > distance:
+				# Collect distance data and change state to 3
 				distance = SonicSensor.distance()
+				state = 3
 
-			# Pause for a second
+			# Pause for a half second after scan
 			time.sleep(0.5)
-
-			# Display the distance
-			print "Step3: " + str(distance)
 
 			# Turn the scanner to step 4
 			ServoControl.step_4()
 
-			# Pause for a second
+			# Pause for a half second before scan
 			time.sleep(0.5)
 
 			# Collect distance data if larger
 			if SonicSensor.distance() > distance:
+				# Collect distance data and change state to 4
 				distance = SonicSensor.distance()
+				state = 4
 
-			# Pause for a second
+			# Pause for a half second after scan
 			time.sleep(0.5)
 
-			# Display the distance
-			print "Step4: " + str(distance)
+			# Check the state
+			if state == 0:
+				# Turn hard right
+
+				# Pause for a second
+
+			elif state == 1:
+
+			elif state == 2:
+
+			elif state == 3"
+
+			else:
+
 
 # Handle the keyboard interrupt
 except KeyboardInterrupt:
