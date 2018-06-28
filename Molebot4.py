@@ -61,7 +61,7 @@ try:
 
 			# Spin to the right
 			MotorControl.spinRight(leftMotor, rightMotor)
-			MotorControl.setSpeed(leftMotor, rightMotor, 175)
+			MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 			# Pause for a half second
 			time.sleep(0.25)
@@ -80,14 +80,14 @@ try:
 
 				# Reverse the robot
 				MotorControl.reverse(leftMotor, rightMotor)
-				MotorControl.setSpeed(leftMotor, rightMotor, 175)
+				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Wait a second
 				time.sleep(1)
 
 				# Turn around the robot
 				MotorControl.spinRight(leftMotor, rightMotor)
-				MotorControl.setSpeed(leftMotor, rightMotor, 175)
+				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Stop
 				MotorControl.stop(leftMotor, rightMotor)
@@ -97,13 +97,17 @@ try:
 
 				# Check the distance
 				if distance > 20:
+
+					# Turn around the robot
+					MotorControl.spinRight(leftMotor, rightMotor)
+					MotorControl.setSpeed(leftMotor, rightMotor, 200)
 				
 					# Reset the counter
 					counter = 0
 			
 		# Move forward
 		MotorControl.forward(leftMotor, rightMotor)
-		MotorControl.setSpeed(leftMotor, rightMotor, 175)
+		MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 		# Reset the counter
 		counter = 0
