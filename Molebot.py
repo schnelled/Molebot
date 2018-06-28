@@ -63,6 +63,9 @@ try:
 			# Turn the scanner to step 0
 			ServoControl.step_0()
 
+			# Pause for a second
+			time.sleep(2)
+
 			# Collect distance data
 			distance = SonicSensor.distance()
 
@@ -74,6 +77,9 @@ try:
 
 			# Turn the scanner to step 1
 			ServoControl.step_1()
+
+			# Pause for a second
+			time.sleep(2)
 
 			# Collect distance data
 			distance = SonicSensor.distance()
@@ -87,6 +93,9 @@ try:
 			# Turn the scanner to step 2
 			ServoControl.step_2()
 
+			# Pause for a second
+			time.sleep(2)
+
 			# Collect distance data
 			distance = SonicSensor.distance()
 
@@ -99,6 +108,9 @@ try:
 			# Turn the scanner to step 3
 			ServoControl.step_3()
 
+			# Pause for a second
+			time.sleep(2)
+
 			# Collect distance data
 			distance = SonicSensor.distance()
 
@@ -110,6 +122,9 @@ try:
 
 			# Turn the scanner to step 4
 			ServoControl.step_4()
+
+			# Pause for a second
+			time.sleep(2)
 
 			# Collect distance data
 			distance = SonicSensor.distance()
