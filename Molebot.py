@@ -70,7 +70,7 @@ try:
 			distance = SonicSensor.distance()
 
 			# Pause for a second
-			time.sleep(0.25)
+			time.sleep(0.5)
 
 			# Display the distance
 			print "Step0: " + str(distance)
@@ -85,7 +85,7 @@ try:
 			distance = SonicSensor.distance()
 
 			# Pause for a second
-			time.sleep(0.25)
+			time.sleep(0.5)
 
 			# Display the distance
 			print "Step1: " + str(distance)
@@ -100,7 +100,7 @@ try:
 			distance = SonicSensor.distance()
 
 			# Pause for a second
-			time.sleep(0.25)
+			time.sleep(0.5)
 
 			# Display the distance
 			print "Step2: " + str(distance)
@@ -115,7 +115,7 @@ try:
 			distance = SonicSensor.distance()
 
 			# Pause for a second
-			time.sleep(0.25)
+			time.sleep(0.5)
 
 			# Display the distance
 			print "Step3: " + str(distance)
@@ -130,7 +130,7 @@ try:
 			distance = SonicSensor.distance()
 
 			# Pause for a second
-			time.sleep(0.25)
+			time.sleep(0.5)
 
 			# Display the distance
 			print "Step4: " + str(distance)
