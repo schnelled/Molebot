@@ -141,16 +141,58 @@ try:
 			# Check the state
 			if state == 0:
 				# Turn hard right
+				MotorControl.spinRight(leftMotor, rightMotor)
+				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
+				time.sleep(1)
+
+				# Stop all movement
+				MotorControl.stop(leftMotor, rightMotor)
 
 			elif state == 1:
+				# Turn right
+				MotorControl.spinRight(leftMotor, rightMotor)
+				MotorControl.setSpeed(leftMotor, rightMotor, 100)
+
+				# Pause for a second
+				time.sleep(1)
+
+				# Stop all movement
+				MotorControl.stop(leftMotor, rightMotor)
 
 			elif state == 2:
+				# Go backward
+				MotorControl.reverse(leftMotor, rightMotor)
+				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
-			elif state == 3"
+				# Pause for a second
+				time.sleep(1)
+
+				# Stop all movement
+				MotorControl.stop(leftMotor, rightMotor)
+
+			elif state == 3:
+				# Turn left
+				MotorControl.spinLeft(leftMotor, rightMotor)
+				MotorControl.setSpeed(leftMotor, rightMotor, 100)
+
+				# Pause for a second
+				time.sleep(1)
+
+				# Stop all movement
+				MotorControl.stop(leftMotor, rightMotor)
 
 			else:
+				# Turn hard left
+				MotorControl.spinLeft(leftMotor, rightMotor)
+				MotorControl.setSpeed(leftMotor, rightMotor, 200)
+
+				# Pause for a second
+				time.sleep(1)
+
+				# Stop all movement
+				MotorControl.stop(leftMotor, rightMotor)
 
 
 # Handle the keyboard interrupt
