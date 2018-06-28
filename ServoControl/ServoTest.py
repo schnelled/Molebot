@@ -30,18 +30,19 @@ pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 counter = servoMin
 while (True):
 	# Change speed of continuous servo on channel O
-	while counter < servoMax:
+	while counter <= servoMax:
 		# Set the pulse width modulation
 		pwm.setPWM(0, 0, counter)
 
 		# Pause for a second
 		time.sleep(1)
 
+		# Display the value
+		print "Current pulse length: " + str(counter)
+
 		# Increament the counter
 		counter += 50
 
-		# Display the value
-		print "Current pulse length: " + str(counter)
 
 	# Reset the position
 	counter = servoMin
