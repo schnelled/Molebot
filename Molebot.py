@@ -64,13 +64,13 @@ try:
 			ServoControl.step_0()
 
 			# Pause for a second
-			time.sleep(0.5)
+			time.sleep(0.4)
 
 			# Collect distance data
 			distance = SonicSensor.distance()
 
 			# Pause for a second
-			time.sleep(0.25)
+			time.sleep(0.4)
 
 			# Display the distance
 			print "Step0: " + str(distance)
@@ -79,13 +79,13 @@ try:
 			ServoControl.step_1()
 
 			# Pause for a second
-			time.sleep(0.5)
+			time.sleep(0.4)
 
 			# Collect distance data
 			distance = SonicSensor.distance()
 
 			# Pause for a second
-			time.sleep(0.25)
+			time.sleep(0.4)
 
 			# Display the distance
 			print "Step1: " + str(distance)
@@ -94,13 +94,13 @@ try:
 			ServoControl.step_2()
 
 			# Pause for a second
-			time.sleep(0.5)
+			time.sleep(0.4)
 
 			# Collect distance data
 			distance = SonicSensor.distance()
 
 			# Pause for a second
-			time.sleep(0.25)
+			time.sleep(0.4)
 
 			# Display the distance
 			print "Step2: " + str(distance)
@@ -109,13 +109,13 @@ try:
 			ServoControl.step_3()
 
 			# Pause for a second
-			time.sleep(0.5)
+			time.sleep(0.4)
 
 			# Collect distance data
 			distance = SonicSensor.distance()
 
 			# Pause for a second
-			time.sleep(0.25)
+			time.sleep(0.4)
 
 			# Display the distance
 			print "Step3: " + str(distance)
@@ -124,13 +124,13 @@ try:
 			ServoControl.step_4()
 
 			# Pause for a second
-			time.sleep(0.5)
+			time.sleep(0.4)
 
 			# Collect distance data
 			distance = SonicSensor.distance()
 
 			# Pause for a second
-			time.sleep(0.25)
+			time.sleep(0.4)
 
 			# Display the distance
 			print "Step4: " + str(distance)
