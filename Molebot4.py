@@ -64,7 +64,7 @@ try:
 			MotorControl.setSpeed(leftMotor, rightMotor, 175)
 
 			# Pause for a half second
-			time.sleep(0.5)
+			time.sleep(0.25)
 
 			# Stop
 			MotorControl.stop(leftMotor, rightMotor)
@@ -76,7 +76,7 @@ try:
 			counter += 1
 
 			# Check if the robot is stuck
-			if counter >= 3:
+			while counter >= 3:
 
 				# Reverse the robot
 				MotorControl.reverse(leftMotor, rightMotor)
