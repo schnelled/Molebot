@@ -167,7 +167,7 @@ try:
 				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
-				time.sleep(1)
+				time.sleep(0.5)
 
 				# Stop all movement
 				MotorControl.stop(leftMotor, rightMotor)
@@ -175,10 +175,10 @@ try:
 			elif state == 1:
 				# Turn right
 				MotorControl.spinRight(leftMotor, rightMotor)
-				MotorControl.setSpeed(leftMotor, rightMotor, 100)
+				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
-				time.sleep(1)
+				time.sleep(0.25)
 
 				# Stop all movement
 				MotorControl.stop(leftMotor, rightMotor)
@@ -197,10 +197,10 @@ try:
 			elif state == 3:
 				# Turn left
 				MotorControl.spinLeft(leftMotor, rightMotor)
-				MotorControl.setSpeed(leftMotor, rightMotor, 100)
+				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
-				time.sleep(1)
+				time.sleep(0.25)
 
 				# Stop all movement
 				MotorControl.stop(leftMotor, rightMotor)
@@ -211,7 +211,7 @@ try:
 				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
-				time.sleep(1)
+				time.sleep(0.5)
 
 				# Stop all movement
 				MotorControl.stop(leftMotor, rightMotor)
