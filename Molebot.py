@@ -138,7 +138,7 @@ try:
 			# Check the state
 			if state == 0:
 				# Turn hard right
-				MotorControl.spinRight(leftMotor, rightMotor)
+				MotorControl.spinLeft(leftMotor, rightMotor)
 				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
@@ -149,7 +149,7 @@ try:
 
 			elif state == 1:
 				# Turn right
-				MotorControl.spinRight(leftMotor, rightMotor)
+				MotorControl.spinLeft(leftMotor, rightMotor)
 				MotorControl.setSpeed(leftMotor, rightMotor, 100)
 
 				# Pause for a second
@@ -171,7 +171,7 @@ try:
 
 			elif state == 3:
 				# Turn left
-				MotorControl.spinLeft(leftMotor, rightMotor)
+				MotorControl.spinRight(leftMotor, rightMotor)
 				MotorControl.setSpeed(leftMotor, rightMotor, 100)
 
 				# Pause for a second
@@ -182,7 +182,7 @@ try:
 
 			else:
 				# Turn hard left
-				MotorControl.spinLeft(leftMotor, rightMotor)
+				MotorControl.spinRight(leftMotor, rightMotor)
 				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
