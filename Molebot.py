@@ -51,6 +51,9 @@ try:
 				
 		# Scan ahead for object
 		distance = SonicSensor.distance()
+
+		# Display current distance
+		print "Current distance: " + str(distance)
 		
 		# Check if object is in range
 		while distance < 20:
