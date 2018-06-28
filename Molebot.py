@@ -167,7 +167,7 @@ try:
 				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
-				time.sleep(0.2)
+				time.sleep(0.4)
 
 				# Stop all movement
 				MotorControl.stop(leftMotor, rightMotor)
@@ -178,7 +178,7 @@ try:
 				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
-				time.sleep(0.4)
+				time.sleep(0.2)
 
 				# Stop all movement
 				MotorControl.stop(leftMotor, rightMotor)
@@ -200,7 +200,7 @@ try:
 				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
-				time.sleep(0.4)
+				time.sleep(0.2)
 
 				# Stop all movement
 				MotorControl.stop(leftMotor, rightMotor)
@@ -211,7 +211,7 @@ try:
 				MotorControl.setSpeed(leftMotor, rightMotor, 200)
 
 				# Pause for a second
-				time.sleep(0.2)
+				time.sleep(0.4)
 
 				# Stop all movement
 				MotorControl.stop(leftMotor, rightMotor)
