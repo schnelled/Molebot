@@ -33,8 +33,25 @@ def step_0():
 
 # Define testing functionality
 if __name__ == "__main__":
+	
 	# Initialize a counter
 	counter = 0
+
+	# Turn off warnings
+	GPIO.setwarnings(False)
+
+	# Set the GPIO to BCM mode
+	GPIO.setmode(GPIO.BCM)
+
+	# Initialize the GPIO input and output
+	GPIO.setup(TRIG, GPIO.OUT)
+	GPIO.setup(ECHO, GPIO.IN)
+
+	# Set the output to low
+	GPIO.output(TRIG, False)
+
+	# Pause for a second
+	time.sleep(1)
 
 	# Loop for a fixed amount of trials
 	while counter < NUMBER_TRIALS:
