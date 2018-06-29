@@ -11,12 +11,12 @@ SERVO_MIN = 275  # Min pulse length out of 4096
 SERVO_MAX = 475  # Max pulse length out of 4096
 SERVO_MID = 375
 
-####################################################
+#####################################################################
 # Function:     step_0
 # Input:        None 
 # Output:       None - void
-# Description:
-####################################################
+# Description:	Move the servo to the far right position
+#####################################################################
 def step_0():
 	# Set frequency to 60 Hz
 	pwm.setPWMFreq(60)
@@ -24,12 +24,12 @@ def step_0():
 	# Set the pulse width modulation
 	pwm.setPWM(0, 0, SERVO_MIN)
 
-####################################################
+#####################################################################
 # Function:     step_1
 # Input:        None
 # Output:       None - void
-# Description:
-####################################################
+# Description:	Move the servo to the right position
+#####################################################################
 def step_1():
 	# Set frequency to 60 Hz
 	pwm.setPWMFreq(60)
@@ -37,12 +37,12 @@ def step_1():
 	# Set the pulse width modulation
 	pwm.setPWM(0, 0, SERVO_MIN + 50)
 
-####################################################
+#####################################################################
 # Function:     step_2
 # Input:        None
 # Output:       None - void
-# Description:
-####################################################
+# Description:	Move the servo to the center position
+#####################################################################
 def step_2():
 	# Set frequency to 60 Hz
 	pwm.setPWMFreq(60)
@@ -50,12 +50,12 @@ def step_2():
 	# Set the pulse width modulation
 	pwm.setPWM(0, 0, SERVO_MID)
 
-####################################################
+#####################################################################
 # Function:     step_3
 # Input:        None
 # Output:       None - Void
-# Description:
-####################################################
+# Description:	Move the servo to the left position
+#####################################################################
 def step_3():
 	# Set frequency to 60 Hz
 	pwm.setPWMFreq(60)
@@ -63,12 +63,12 @@ def step_3():
 	# Set the pulse width modulation
 	pwm.setPWM(0, 0, SERVO_MID + 50)
 
-####################################################
+#####################################################################
 # Function:     step_4
 # Input:        None
 # Output:       None - Void
-# Description:
-####################################################
+# Description:	Move the servo to the far left position
+#####################################################################
 def step_4():
 	# Set frequency to 60 Hz
 	pwm.setPWMFreq(60)
