@@ -41,6 +41,9 @@ def distance():
 
 # Define testing functionality
 if __name__ == "__main__":
+	# Turn off warnings
+	GPIO.setwarnings(False)
+
 	# Set the GPIO to BCM mode
 	GPIO.setmode(GPIO.BCM)
 
