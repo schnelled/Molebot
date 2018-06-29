@@ -3,7 +3,7 @@ import ServoControl
 import SensorControl
 
 # Define constants
-NUMBER_TRAILS = 5
+NUMBER_TRIALS = 5
 FAR_PAUSE = 2
 NEAR_PAUSE = 1
 
