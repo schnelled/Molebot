@@ -79,9 +79,6 @@ def step_4():
 # Define testing functionality
 if __name__ == "__main__":
 	while (True):
-		# Pause movement
-		time.sleep(1)
-
 		# Move to position 0
 		step_0()
 
