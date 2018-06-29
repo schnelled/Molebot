@@ -1,6 +1,7 @@
 # Import needed modules
 import ServoControl
 import SensorControl
+import time
 
 # Define constants
 NUMBER_TRIALS = 5
