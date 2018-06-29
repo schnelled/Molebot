@@ -1,4 +1,5 @@
 # Import needed modules
+import RPi.GPIO as GPIO
 import ServoControl
 import SensorControl
 import time
